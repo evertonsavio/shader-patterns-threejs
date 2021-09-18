@@ -14,3 +14,6 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
+```
+Perlin Noises we can find for GLSL: https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
+```
