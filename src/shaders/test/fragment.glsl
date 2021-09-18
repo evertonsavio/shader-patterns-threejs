@@ -329,6 +329,17 @@ void main()
 
     //Pattern 50
     float strength = step(0.9, sin(cnoise(vuv * 10.0) * 20.0));
-    gl_FragColor = vec4(strength, strength, strength, 1.0); 
+    
+    //Clamp the strenght setting limits
+    strength = clamp(strength, 0.0, 1.0);
+
+    //colored version
+    vec3 blackColor = vec3(0.0);
+    vec3 uvColor = vec3(vuv, 1.0);
+    vec3 mixedColor = mix(blackColor, uvColor, strength);
+    gl_FragColor = vec4(mixedColor, 1.0);
+
+    //black white color
+    //gl_FragColor = vec4(strength, strength, strength, 1.0); 
 
 }
